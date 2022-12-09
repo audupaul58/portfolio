@@ -1,0 +1,78 @@
+
+{% extends 'base.html'%}
+{% load static %}
+{% load bootstrap5 %}
+
+{% bootstrap_css %}
+
+{% bootstrap_javascript %}
+
+{% bootstrap_messages %}
+
+
+
+{% block content %}
+
+<section class="section about-me" >
+<div class="container">
+    <div class="section-heading">
+      <h2>What I’m good at?</h2>
+      <div class="line-dec"></div>
+      <span
+        >Curabitur leo felis, rutrum vitae varius eu, malesuada a tortor.
+        Vestibulum congue leo et tellus aliquam, eu viverra nulla semper.
+        Nullam eu faucibus diam. Donec eget massa ante.</span
+      >
+    </div>
+    <div class="row ">
+      <div class="col-md-6  ">
+        <div class="service-item">
+          <div class="first-service-icon service-icon"></div>
+          <h4>HTML5 &amp; <br> CSS3</h4>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="service-item">
+          <div class="second-service-icon service-icon"></div>
+          <h4>Bootstrap &amp; <br> SASS</h4>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="service-item">
+          <div class="third-service-icon service-icon"></div>
+          <h4>Python  &amp; Django &amp; Django Restframework</h4>
+         
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="service-item">
+          <div class="fourth-service-icon service-icon"></div>
+          <h4>Javascript,  React &amp; <br> Next Js</h4>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      {% for skill in skills %}
+      <div class="col-md-4  ">
+        <div class="progress blue" style="background-color:{{skill.color}}">
+          <span class="progress-left">
+                            <span class="progress-bar"></span>
+          </span>
+          <span class="progress-right">
+                            <span class="progress-bar"></span>
+          </span>
+          <div class="progress-value">{{skill.level}}%</div> 
+        </div>
+        
+        <div class="shadow p-5 border-4">
+        <div class="d-flex justify-content-between"> <strong>{{skill.title}}</strong> </div>
+        </div>
+      
+      </div>
+      {% endfor %}
+      </div>
+  </div>
+</section>
+
+{% endblock %}
